@@ -1,84 +1,76 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Belajar Coding </title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="style.css">
+<title>Belajar Coding</title>
+
+<link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
-    <div class="container">
+<div class="container">
 
-        <!-- Progress -->
-        <div class="progress-container">
-            <div class="progress-bar" id="progressBar"></div>
-        </div>
-
-        <div class="progress-text">
-            Soal <span id="nomorSoal">1</span> / <span id="totalSoal">10</span>
-        </div>
-
-        <!-- Card -->
-        <div class="card">
-
-            <h2 id="judul">🎯 Latihan Coding</h2>
-
-            <p id="pertanyaan"></p>
-
-            <pre id="kode"></pre>
-
-            <div id="pilihan"></div>
-
-            <div id="hasil"></div>
-
-            <button id="nextBtn" onclick="nextQuestion()">
-                Soal Berikutnya ➜
-            </button>
-
-        </div>
-
-        <!-- Skor -->
-        <div class="score-box">
-
-            ⭐ Skor :
-            <span id="score">0</span>
-
-        </div>
-
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
     </div>
 
+    <div class="progress-text">
+        Soal <span id="nomorSoal">1</span> /
+        <span id="totalSoal">10</span>
+    </div>
 
-    <!-- Halaman selesai -->
+    <div class="card">
 
-    <div class="finish" id="finishPage">
+        <h2 id="judul"></h2>
 
-        <h1>🎉 Selamat!</h1>
+        <p id="pertanyaan"></p>
 
-        <h2>Kamu telah menyelesaikan semua latihan.</h2>
+        <h1 id="targetText"></h1>
 
-        <br>
+        <pre id="kode"></pre>
 
-        <h3>
-            Skor Akhir :
-            <span id="finalScore"></span>
-        </h3>
+        <div id="pilihan"></div>
 
-        <br>
+        <p id="hasil"></p>
 
-        <button onclick="location.reload()">
-            Ulangi Lagi
+        <button id="nextBtn" onclick="nextQuestion()">
+            Soal Berikutnya →
         </button>
 
     </div>
 
+    <div class="score-box">
+        ⭐ Skor :
+        <span id="score">0</span>
+    </div>
 
-    <script src="soal.js"></script>
-    <script src="script.js"></script>
+</div>
+
+
+<div class="finish" id="finishPage">
+
+<h1>🎉 Selamat!</h1>
+
+<h2>Kamu telah menyelesaikan semua latihan.</h2>
+
+<h3>
+Skor Akhir :
+<span id="finalScore"></span>
+</h3>
+
+<button onclick="location.reload()">
+Ulangi Lagi
+</button>
+
+</div>
+
+
+<script src="soal.js"></script>
+<script src="script.js"></script>
 
 </body>
-
 </html>
