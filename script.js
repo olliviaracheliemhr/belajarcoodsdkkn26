@@ -28,103 +28,99 @@ loadQuestion();
 
 function loadQuestion(){
 
-    const q = questions[currentQuestion];
+const q = questions[currentQuestion];
 
-    judul.innerHTML = q.title;
+judul.innerHTML = q.title;
 
-    pertanyaan.innerHTML = q.question;
+pertanyaan.innerHTML = q.question;
 
-    targetText.innerHTML = q.text;
+targetText.innerHTML = q.text;
 
-    kode.innerHTML = q.code;
+kode.innerHTML = q.code;
 
-    nomorSoal.innerHTML = currentQuestion + 1;
+nomorSoal.innerHTML = currentQuestion + 1;
 
-    progressBar.style.width =
-    ((currentQuestion)/questions.length)*100 + "%";
+progressBar.style.width =
+((currentQuestion+1)/questions.length)*100+"%";
 
-    hasil.innerHTML="";
+hasil.innerHTML="";
 
-    nextBtn.style.display="none";
+nextBtn.style.display="none";
 
-    pilihan.innerHTML="";
+pilihan.innerHTML="";
 
-    q.options.forEach((option,index)=>{
+q.options.forEach((option,index)=>{
 
-        const btn=document.createElement("button");
+const btn=document.createElement("button");
 
-        btn.className="option";
+btn.className="option";
 
-        btn.innerHTML=option;
+btn.innerHTML=option;
 
-        btn.onclick=function(){
+btn.onclick=function(){
 
-            checkAnswer(index,btn);
-
-        }
-
-        pilihan.appendChild(btn);
-
-    });
+checkAnswer(index);
 
 }
 
-function checkAnswer(index,button){
+pilihan.appendChild(btn);
 
-    const q=questions[currentQuestion];
+});
 
-    const semua=document.querySelectorAll(".option");
+}
 
-    semua.forEach(btn=>btn.disabled=true);
+function checkAnswer(index){
 
-    if(index==q.answer){
+const q=questions[currentQuestion];
 
-        button.classList.add("correct");
+const semua=document.querySelectorAll(".option");
 
-        hasil.innerHTML="🎉 Hebat! Jawabanmu benar.";
+semua.forEach(btn=>btn.disabled=true);
 
-        hasil.style.color="green";
+if(index===q.answer){
 
-        score+=10;
+semua[index].classList.add("correct");
 
-        scoreText.innerHTML=score;
+hasil.innerHTML="🎉 Jawaban Benar!";
 
-    }
+hasil.style.color="green";
 
-    else{
+score+=10;
 
-        button.classList.add("wrong");
+scoreText.innerHTML=score;
 
-        semua[q.answer].classList.add("correct");
+}else{
 
-        hasil.innerHTML="❌ Jawaban kurang tepat.";
+semua[index].classList.add("wrong");
 
-        hasil.style.color="red";
+semua[q.answer].classList.add("correct");
 
-    }
+hasil.innerHTML="❌ Jawaban Salah";
 
-    nextBtn.style.display="block";
+hasil.style.color="red";
+
+}
+
+nextBtn.style.display="block";
 
 }
 
 function nextQuestion(){
 
-    currentQuestion++;
+currentQuestion++;
 
-    if(currentQuestion<questions.length){
+if(currentQuestion<questions.length){
 
-        loadQuestion();
+loadQuestion();
 
-    }
+}else{
 
-    else{
+container.style.display="none";
 
-        container.style.display="none";
+finishPage.style.display="block";
 
-        finishPage.style.display="block";
+finalScore.innerHTML=score+" / 100";
 
-        finalScore.innerHTML=score+"/100";
-
-    }
+}
 
 }
