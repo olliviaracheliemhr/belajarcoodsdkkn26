@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Belajar Coding</title>
+
+<style>
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#eef2ff;
+    margin:0;
+}
+
+.container{
+    width:90%;
+    max-width:600px;
+    margin:40px auto;
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 10px 20px rgba(0,0,0,.15);
+}
+
+h1{
+    color:#3949ab;
+}
+
+pre{
+    background:#222;
+    color:#00ff99;
+    padding:15px;
+    border-radius:10px;
+    font-size:20px;
+}
+
+button{
+    width:100%;
+    margin-top:15px;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    background:#3949ab;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#283593;
+}
+
+#hasil{
+    margin-top:25px;
+    font-size:22px;
+    font-weight:bold;
+    text-align:center;
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<h1>🎯 Latihan 1</h1>
+
+<p>
+Lengkapi kode berikut agar menampilkan tulisan
+<b>Halo Dunia</b>.
+</p>
+
+<pre>
+print(_____)
+
+</pre>
+
+<button onclick="cek('A')">
+A. "Halo Dunia"
+</button>
+
+<button onclick="cek('B')">
+B. "Python"
+</button>
+
+<div id="hasil"></div>
+
+</div>
+
+<script>
+
+function cek(jawaban){
+
+if(jawaban=="A"){
+
+document.getElementById("hasil").innerHTML=
+"🎉 Hebat! Jawabanmu benar.";
+
+document.getElementById("hasil").style.color="green";
+
+}
+
+else{
+
+document.getElementById("hasil").innerHTML=
+"❌ Jawaban masih salah. Coba lagi ya!";
+
+document.getElementById("hasil").style.color="red";
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
